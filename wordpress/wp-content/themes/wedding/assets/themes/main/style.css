@@ -2105,51 +2105,29 @@ img {
     }
 }
 
-.home-page .h-section2 .container_common .content_common .album {
-    width: 100%;
+.album_column {
     display: flex;
-    justify-content: space-between
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
 }
 
-.home-page .h-section2 .container_common .content_common .album .album_column {
-    width: calc((100% - 66px) / 3)
-}
 
-@media (max-width: 1024px) {
-    .home-page .h-section2 .container_common .content_common .album .album_column {
-        width: calc((100% - 60px) / 3)
-    }
-}
 
-@media (max-width: 768px) {
-    .home-page .h-section2 .container_common .content_common .album .album_column {
-        width: calc((100% - 40px) / 3)
-    }
-}
 
-@media (max-width: 480px) {
-    .home-page .h-section2 .container_common .content_common .album .album_column {
-        display: none
-    }
-}
 
 .home-page .h-section2 .container_common .content_common .album .album_column_m {
     display: none
 }
 
-@media (max-width: 480px) {
-    .home-page .h-section2 .container_common .content_common .album .album_column_m {
-        display: block
-    }
-}
-
-.home-page .h-section2 .container_common .content_common .album .album-item {
-    width: 100%;
+.album-item {
+    width: 32%;
     margin-bottom: 31px;
     transition: 2s;
     overflow: hidden;
     cursor: pointer
 }
+
 
 .home-page .h-section2 .container_common .content_common .album .album-item:hover img {
     transform: scale(1.1)
@@ -2643,4 +2621,9 @@ img {
     left: inherit;
     right: 0;
     background-image: url(../../img/arrow-right.png) !important
+}
+@media (max-width: 575px) {
+    .album-item {
+        width: 100%;
+    }
 }

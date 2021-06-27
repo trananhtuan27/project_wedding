@@ -129,42 +129,37 @@ get_header();
                                             mình...</b>
                                     </h3>
                                     <div class="album" id="album-main">
-                                        <div class="album_column">
-                                            <div class="album-item">
-                                                <img class="lazyload"
-                                                     data-src="https://tita.wedding/wp-content/uploads/2020/10/SIN00015-1.jpg"
-                                                     alt="Tiến &amp; Tâm Wedding"/>
+                                        <div class="ad2">
+                                            <div class="album_column">
+
+                                                <?php
+                                                $image_ids = get_posts(
+                                                    array(
+                                                        'post_type' => 'attachment',
+                                                        'post_mime_type' => 'image',
+                                                        'post_status' => 'inherit',
+                                                        'posts_per_page' => -1,
+                                                        'fields' => 'ids',
+                                                    ));
+
+                                                $images = array_map("wp_get_attachment_url", $image_ids);
+
+                                                ?>
+
+
+                                                <?php foreach ($images as $image): ?>
+                                                    <div class="album-item"><img src="
+                                                                        <?php echo $image ?>"
+                                                                                 alt="   <?php echo $image ?>"></div>
+
+                                                <?php endforeach; ?>
+
                                             </div>
-
-                                        // đổ dữ liệu cột 1
-
-
                                         </div>
-                                        <div class="album_column">
-                                            <div class="album-item">
-                                                <img class="lazyload"
-                                                     data-src="https://tita.wedding/wp-content/uploads/2020/10/SIN00025-1.jpg"
-                                                     alt="Tiến &amp; Tâm Wedding"/>
-                                            </div>
-                                                 //đổ dữ liệu cột 2
 
-                                        </div>
-                                        <div class="album_column">
-                                            <div class="album-item">
-                                                <img class="lazyload"
-                                                     data-src="https://tita.wedding/wp-content/uploads/2020/10/SIN00136-1.jpg"
-                                                     alt="Tiến &amp; Tâm Wedding"/>
-                                            </div>
-                                          //đổ dữ liệu cột 3
-                                        </div>
-                                        <div class="album_column_m">
-                                            <div class="album-item"><img class="lazyload"
-                                                                         data-src="https://tita.wedding/wp-content/uploads/2020/10/SIN00015-1.jpg"
-                                                                         alt="Tiến &amp; Tâm Wedding"/></div>
-                                                //abum column m
-                                        </div>
 
                                     </div>
+
                                 </div>
                             </div>
                         </section>
@@ -353,43 +348,47 @@ get_header();
                             <div class="content_common">
                                 <div class="swiper-container gallery-top">
                                     <div class="swiper-wrapper">
-                                        <div class="swiper-slide"><img class="lazyload"
-                                                                       data-src="https://tita.wedding/wp-content/uploads/2020/10/SIN00015-1.jpg"
-                                                                       alt="Tiến &amp; Tâm Wedding"/></div>
-                                        <div class="swiper-slide"><img class="lazyload"
-                                                                       data-src="https://pdp.edu.vn/wp-content/uploads/2021/01/hinh-anh-girl-xinh-toc-ngan-de-thuong.jpg"
-                                                                       alt="Tiến &amp; Tâm Wedding"/></div>
-<!--                                    Đổ Dữ liệu ảnh sider-->
+
+
+                                        <?php foreach ($images as $image): ?>
+                                            <div class="swiper-slide"><img src="
+                                                                        <?php echo $image ?>"
+                                                                           alt="   <?php echo $image ?>"></div>
+                                        <?php endforeach; ?>
+
+
                                     </div>
                                     <div class="swiper-button-next swiper-button-white"></div>
                                     <div class="swiper-button-prev swiper-button-white"></div>
                                 </div>
                                 <div class="swiper-container gallery-thumbs">
+
                                     <div class="swiper-wrapper">
-                                        <div class="swiper-slide"
-                                             style="background-image:url(https://tita.wedding/wp-content/uploads/2020/10/SIN00015-1.jpg)"></div>
-                                        <div class="swiper-slide"
-                                             style="background-image:url(https://pdp.edu.vn/wp-content/uploads/2021/01/hinh-anh-girl-xinh-toc-ngan-de-thuong.jpg)"></div>
-<!--                                      Đổ dữ liệu background sider-->
+                                        <?php foreach ($images as $image): ?>
+
+                                            <div class="swiper-slide"
+                                                 style="background-image:url(<?php echo $image ?>)"></div>
+                                        <?php endforeach; ?>
+
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-<!--                    <div class="popup-album-image-m" id="popup-album-image-m">-->
-<!--                        <button class="btn-close" id="btn-close-album-popup-m">-->
-<!--                            <img src="https://tita.wedding/wp-content/themes/main/assets/images/common/close.png"-->
-<!--                                 alt="Close">-->
-<!--                        </button>-->
-<!---->
-<!--                        <div class="owl-carousel" id="owl-carousel-popup">-->
-<!--                            <div><img class="lazyload"-->
-<!--                                      data-src="https://tita.wedding/wp-content/uploads/2020/10/SIN00015-1.jpg"-->
-<!--                                      alt=""></div>-->
-<!--                            owl-carousel-popup-->
-<!--                        </div>-->
-<!--                    </div>-->
+                    <!--                    <div class="popup-album-image-m" id="popup-album-image-m">-->
+                    <!--                        <button class="btn-close" id="btn-close-album-popup-m">-->
+                    <!--                            <img src="https://tita.wedding/wp-content/themes/main/assets/images/common/close.png"-->
+                    <!--                                 alt="Close">-->
+                    <!--                        </button>-->
+                    <!---->
+                    <!--                        <div class="owl-carousel" id="owl-carousel-popup">-->
+                    <!--                            <div><img class="lazyload"-->
+                    <!--                                      data-src="https://tita.wedding/wp-content/uploads/2020/10/SIN00015-1.jpg"-->
+                    <!--                                      alt=""></div>-->
+                    <!--                            owl-carousel-popup-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
 
                     <section class="thiepmoi-nhatrai ivitation_cards" id="cards-bride"
                              style="background-image: url('<?php echo get_bloginfo('template_directory'); ?>/assets/img/bgr2.png');">

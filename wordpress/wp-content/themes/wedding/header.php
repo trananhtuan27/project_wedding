@@ -19,7 +19,7 @@
           href="<?php echo get_bloginfo('template_directory'); ?>/assets/img/favicon.png">
     <title>Quý &amp; Lan Anh Wedding &#8211; The most beautiful love story</title>
     <link rel="stylesheet"
-          href="<?php echo get_bloginfo('template_directory'); ?>/assets/themes/main/style.css?ver=1.1">
+          href="<?php echo get_bloginfo('template_directory'); ?>/assets/themes/main/style.css?ver=1.2">
     <link rel="stylesheet"
           href="<?php echo get_bloginfo('template_directory'); ?>/assets/css/dist/block-library/style.css?ver=1.1">
     <link rel='stylesheet' id='swiper-css'
